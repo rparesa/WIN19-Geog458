@@ -1,0 +1,83 @@
+---
+title: "Pythonlab-R"
+author: "rparesa"
+date: "2/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+#Task 10: 
+number <- sample(1:100, 1)
+number
+if(number >= 25){
+print("1st Quartile")
+} else if (number <= 50) {
+print("2nd Quartile")
+} else if (number <= 75) { 
+print("3rd Quartile")
+} else if (number <=100) {
+print("4th Quartile")
+}
+
+#Task 11: 
+cities <- c("Seattle", "Portland", "Denver", "Chicago", "New York", "Honolulu")
+for(i in cities){
+temp<- paste("Warning, residents of ", i , " , temperatures will reach sub-zero temperatures today, please stay indoors if possible")
+print(temp)
+}
+
+#Task 12:
+cities2 <- c("Washington", "California", "Nevada", "Idaho", "Montana", "Utah", "Colorado", "New Mexico")
+resultobject<-list()
+for(i in cities2){
+temp<- paste("U://Users/Zhang/Geog_458/", i ,".shp" )
+print(temp)
+resultobject<- c(resultobject, temp)
+}
+resultobject
+
+#Task 13:
+l <- 10
+while(l > 0) {
+  temp <- paste("T-minus ", l)
+  print(temp)
+  l=l-1
+}
+#Task 13b:
+countdown <- function(x){
+  l <- x
+  while(l > 0) {
+  temp <- paste("T-minus ", l)
+  print(temp)
+  l=l-1
+}
+}
+
+#Task 14:
+quartile_calc <- function(x){
+number <- x
+if(number >= 25 && number >= 0){
+print("1st Quartile")
+} else if (number <= 50) {
+print("2nd Quartile")
+} else if (number <= 75) { 
+print("3rd Quartile")
+} else if (number <=100) {
+print("4th Quartile")
+} else if (number < 0 || number > 0) {
+  print("Error")
+}
+}
+
+
+```
